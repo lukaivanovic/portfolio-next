@@ -58,10 +58,10 @@ export default function VideoPlayer({ url }: VideoPlayerProps) {
   return (
     <video
       ref={videoRef}
-      loop
-      muted
       playsInline
-      controls
+      autoPlay
+      muted
+      loop
       preload="metadata"
       aria-label="Video player"
       className="rounded-lg overflow-hidden border border-neutral-200"
