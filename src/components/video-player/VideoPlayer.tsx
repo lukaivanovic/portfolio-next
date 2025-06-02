@@ -61,10 +61,13 @@ export default function VideoPlayer({ url }: VideoPlayerProps) {
       loop
       muted
       playsInline
+      preload="metadata"
       aria-label="Video player"
       className="rounded-lg overflow-hidden border border-neutral-200"
     >
-      <source src={url} type="video/mp4" />
+      <source src={url} type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
+      <source src={url} type="video/webm; codecs=vp8,vorbis" />
+      <source src={url} type="video/quicktime" />
       Your browser does not support the video tag.
     </video>
   );

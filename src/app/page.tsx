@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Carousel from "@/components/carousel/Carousel";
 import { list } from "@vercel/blob";
-import VideoPlayer from "@/components/VideoPlayer";
-import VideoPlayerWithControls from "@/components/VideoPlayerWithControls";
+import VideoPlayer from "@/components/video-player/VideoPlayer";
+import VideoPlayerWithControls from "@/components/video-player/VideoPlayerWithControls";
 
 const images = [
   {
@@ -33,9 +33,9 @@ export default function Home() {
             href="/"
             className="text-primary flex flex-row items-center gap-2"
           >
-            / Index
+            Index
           </Link>
-          <div className="flex gap-4 text-secondary">
+          <div className="flex gap-4">
             <a
               className="hover:text-primary transition-colors"
               href="https://www.linkedin.com/in/ivanovicluka0/"
@@ -63,8 +63,8 @@ export default function Home() {
             Hey, I'm Luka, a product-oriented design engineer.
           </h1>
 
-          <p className="mb-6 mr-4">
-            Most recently, I've spent three years at{" "}
+          <p className="mb-6 max-w-[590px]">
+            Most recently, I've spent three years as the founding designer at{" "}
             <a
               href="https://weweb.io"
               target="_blank"
@@ -73,9 +73,8 @@ export default function Home() {
             >
               weweb
             </a>{" "}
-            as the founding designer for a AI-powered app builder operating on
-            the intersection of product, design and development. Previous
-            clients include UBS and{" "}
+            , a powerful web app builder. Previously worked for clients
+            including world-renowned bank and{" "}
             <a
               href="https://akkio.com"
               target="_blank"
@@ -85,10 +84,10 @@ export default function Home() {
               Akkio
             </a>
             .
-          </p>
-          <p className="mb-10 mr-4">
-            Currently working on improving my craft and learning new things.
-            Open to new role inquiries.
+            <br />
+            <br />
+            I'm currently working on improving my craft and learning new things.
+            Open to inquiries.
           </p>
 
           <div className="flex gap-2">
@@ -96,19 +95,9 @@ export default function Home() {
               href="https://calendly.com/lluka-ivanovic/new-meeting"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 bg-neutral-800 text-neutral-300 px-4 py-1 rounded-full hover:bg-neutral-700 hover:text-neutral-300 transition-colors"
+              className="flex items-center gap-1 bg-neutral-900 text-white px-3 py-0.5 rounded-full hover:bg-neutral-700 hover:text-neutral-300 transition-colors"
             >
               Book a call
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 256 256"
-                className="chevron"
-              >
-                <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z" />
-              </svg>
             </a>
             <button
               id="emailButton"

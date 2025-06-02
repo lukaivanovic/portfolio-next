@@ -40,10 +40,11 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             initial={{ x: 400, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -400, opacity: 0 }}
-            transition={{
-              x: { type: "spring", stiffness: 260, damping: 36, mass: 1.5 },
-              opacity: { duration: 0.2 },
-            }}
+            transition={{ duration: 0.3 }}
+            // transition={{
+            //   x: { type: "spring", stiffness: 260, damping: 36, mass: 1.5 },
+            //   opacity: { duration: 0.2 },
+            // }}
           />
         </AnimatePresence>
       </div>
