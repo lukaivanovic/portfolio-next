@@ -61,6 +61,7 @@ export default function VideoPlayer({ url }: VideoPlayerProps) {
       loop
       muted
       playsInline
+      controls
       preload="metadata"
       aria-label="Video player"
       className="rounded-lg overflow-hidden border border-neutral-200"
