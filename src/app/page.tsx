@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Carousel from "@/components/carousel/Carousel";
 import { list } from "@vercel/blob";
+import VideoPlayer from "@/components/VideoPlayer";
+import VideoPlayerWithControls from "@/components/VideoPlayerWithControls";
 
 const images = [
   {
@@ -23,13 +25,15 @@ const images = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen max-w-3xl mx-auto">
+    <div className="min-h-screen">
       {/* Navigation */}
-      <section>
+      <section className=" max-w-2xl mx-auto">
         <div className="container mx-auto flex items-start justify-between text-primary mt-6">
-          <Link href="/" className="text-primary">
-            Luka Ivanovic <br />
-            <span className="text-secondary text-sm">Design Engineer</span>
+          <Link
+            href="/"
+            className="text-primary flex flex-row items-center gap-2"
+          >
+            / Index
           </Link>
           <div className="flex gap-4 text-secondary">
             <a
@@ -52,17 +56,15 @@ export default function Home() {
         </div>
       </section>
 
-      <VideoComponent fileName="my-video.mp4" />
-
       {/* Hero */}
-      <section>
+      <section className=" max-w-2xl mx-auto">
         <div className="container mx-auto flex flex-col justify-center pt-[180px] pb-[240px]">
           <h1 className="mb-6">
-            Designer who codes with focus on product thinking
+            Hey, I'm Luka, a product-oriented design engineer.
           </h1>
 
-          <p className="mb-6 mr-4 text-neutral-300">
-            Most recently spent three years at{" "}
+          <p className="mb-6 mr-4">
+            Most recently, I've spent three years at{" "}
             <a
               href="https://weweb.io"
               target="_blank"
@@ -84,9 +86,9 @@ export default function Home() {
             </a>
             .
           </p>
-          <p className="mb-10 mr-4 text-neutral-400">
-            Currently looking for something new while improving my craft and
-            learning new things.
+          <p className="mb-10 mr-4">
+            Currently working on improving my craft and learning new things.
+            Open to new role inquiries.
           </p>
 
           <div className="flex gap-2">
@@ -118,88 +120,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Company Section */}
-      <div className="container mx-auto flex flex-row items-center justify-between pb-[24px]">
-        <div className="rounded-md flex flex-row items-center justify-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 16 16"
-            className="rounded-sm overflow-hidden text-neutral-800"
-          >
-            <path fill="currentColor" d="M0 0h16v16H0z" />
-            <path
-              fill="var(--color-neutral-300)"
-              d="M9.746 9.473H6.291a.117.117 0 0 0-.12.115v2.294c0 .063.054.115.12.115h5.707L9.746 9.473Z"
-            />
-            <path
-              fill="var(--color-neutral-300)"
-              d="M9.746 6.585v2.89l2.252 2.524V6.585a.117.117 0 0 0-.12-.115H9.867a.117.117 0 0 0-.12.115ZM6.25 9.414v-2.89L3.998 4v5.414c0 .064.054.115.12.115H6.13a.117.117 0 0 0 .119-.115Z"
-            />
-            <path
-              fill="var(--color-neutral-300)"
-              d="M6.211 6.632h3.4c.083 0 .15-.054.15-.12V4.12c0-.066-.067-.12-.15-.12H4.003l2.21 2.632Z"
-            />
-          </svg>
-          weweb
+      <section className=" max-w-2xl mx-auto">
+        {/* Company Section */}
+        <div className="container flex flex-row items-center justify-between pb-[24px]">
+          <div className="rounded-md flex flex-row items-center justify-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 16 16"
+              className="rounded-sm overflow-hidden text-neutral-800"
+            >
+              <path fill="currentColor" d="M0 0h16v16H0z" />
+              <path
+                fill="var(--color-neutral-300)"
+                d="M9.746 9.473H6.291a.117.117 0 0 0-.12.115v2.294c0 .063.054.115.12.115h5.707L9.746 9.473Z"
+              />
+              <path
+                fill="var(--color-neutral-300)"
+                d="M9.746 6.585v2.89l2.252 2.524V6.585a.117.117 0 0 0-.12-.115H9.867a.117.117 0 0 0-.12.115ZM6.25 9.414v-2.89L3.998 4v5.414c0 .064.054.115.12.115H6.13a.117.117 0 0 0 .119-.115Z"
+              />
+              <path
+                fill="var(--color-neutral-300)"
+                d="M6.211 6.632h3.4c.083 0 .15-.054.15-.12V4.12c0-.066-.067-.12-.15-.12H4.003l2.21 2.632Z"
+              />
+            </svg>
+            weweb
+          </div>
+          <span className="text-neutral-400 text-sm">2022 - 2025</span>
         </div>
-        <span className="text-neutral-400 text-sm">2022 - 2025</span>
-      </div>
 
-      <div>
-        <Carousel images={images} />
-      </div>
+        <div>
+          <Carousel images={images} />
+        </div>
+
+        <div className="mt-[80px]">
+          <div className="rounded-md overflow-hidden">
+            <VideoComponentWithControls fileName="ww-ai2-f03z4HoaX5elLRvO6heEcBLVF0I2TQ.mov" />
+          </div>
+          AI chat
+        </div>
+      </section>
 
       {/* Playground Section */}
-      <section className="pb-[200px]">
-        <div className="container mx-auto">
-          <h1 className="mb-2">Playground</h1>
-          <p className="mb-[80px]">
-            Place where I experiment with new ideas and technologies.
-          </p>
+      <section className="pb-[200px] max-w-[1440px] mx-auto grid grid-cols-3 gap-4 mt-[200px]">
+        <h1 className="col-span-3 text-center mb-8">Playground</h1>
 
-          <div className="grid grid-cols-1 gap-4">
-            {/* Placeholder for Tsushima component */}
-            <div className="relative aspect-[8/5] rounded-lg overflow-hidden flex flex-col bg-neutral-800">
-              <div className="w-full h-full flex-grow flex items-center justify-center">
-                {/* Tsushima component will go here */}
-              </div>
-              <div className="absolute bottom-2 left-2 text-white opacity-50">
-                Dissolve Effect
-              </div>
-              <div className="absolute bottom-2 right-2 text-white flex items-center gap-2 opacity-50">
-                three.js
-              </div>
-            </div>
-
-            {/* Placeholder for AiToggle component */}
-            <div className="aspect-[8/5] bg-neutral-800 rounded-lg overflow-hidden relative text-black">
-              <div className="w-full h-full flex items-center justify-center">
-                {/* AiToggle component will go here */}
-              </div>
-              <div className="absolute bottom-2 left-2 text-white opacity-50">
-                Radial Menu
-              </div>
-              <div className="absolute bottom-2 right-2 flex items-center gap-2 text-white opacity-50">
-                Vue
-              </div>
-            </div>
-
-            {/* Placeholder for RadialMenu component */}
-            <div className="aspect-[8/5] bg-neutral-900 rounded-lg overflow-hidden relative">
-              <div className="w-full h-full flex items-center justify-center">
-                {/* RadialMenu component will go here */}
-              </div>
-              <div className="absolute bottom-2 left-2 text-white opacity-50">
-                Radial Menu
-              </div>
-              <div className="absolute bottom-2 right-2 flex items-center gap-2 text-white opacity-50">
-                React
-              </div>
-            </div>
-          </div>
+        <div className="flex flex-col gap-4">
+          <VideoComponent fileName="rive-85tMyJUmJSpjRMkb92XjKmM4DmpBSx.mp4" />
+          <VideoComponent fileName="Radial-vMSxqhpEkaOUWTvw49xTu6pATe3ung.mp4" />
+        </div>
+        <div className="flex flex-col gap-4">
+          <VideoComponent fileName="audio-ios-gswdQVvr0ybJjdc8wAHXVaEFCJI496.mp4" />
+          <VideoComponent fileName="threejs-akqYsQvzXfgT2ojk1E1duSUnSU88vj.mp4" />
+        </div>
+        <div className="flex flex-col gap-4">
+          <VideoComponent fileName="tsushima-0wnWLPGPxsUiKhzdE89BZRrC5A59YL.mp4" />
+          <VideoComponent fileName="menu-jEIIKGiyXywx0w281iZHE4ywEzyyif.mp4" />
         </div>
       </section>
     </div>
@@ -213,10 +191,15 @@ async function VideoComponent({ fileName }: { fileName: string }) {
   });
   const { url } = blobs[0];
 
-  return (
-    <video controls preload="none" aria-label="Video player">
-      <source src={url} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  );
+  return <VideoPlayer url={url} />;
+}
+
+async function VideoComponentWithControls({ fileName }: { fileName: string }) {
+  const { blobs } = await list({
+    prefix: fileName,
+    limit: 1,
+  });
+  const { url } = blobs[0];
+
+  return <VideoPlayerWithControls url={url} />;
 }

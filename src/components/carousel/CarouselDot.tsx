@@ -33,13 +33,13 @@ const CarouselDot: React.FC<CarouselDotProps> = ({ active, onClick }) => {
 
   return (
     <div
-      className="relative h-1 w-4 rounded-full bg-neutral-600 cursor-pointer overflow-hidden"
+      className="relative h-1 w-4 rounded-full bg-neutral-300 cursor-pointer overflow-hidden"
       ref={scope}
       onClick={onClick}
     >
       <div
         id="bg"
-        className="absolute top-0 left-0 w-full translate-x-[-32px] h-full bg-white"
+        className="absolute top-0 left-0 w-full translate-x-[-32px] h-full bg-black"
       ></div>
     </div>
   );
