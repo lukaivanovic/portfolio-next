@@ -65,6 +65,7 @@ export default function VideoPlayer({ url }: VideoPlayerProps) {
       preload="metadata"
       aria-label="Video player"
       className="rounded-lg overflow-hidden border border-neutral-200"
+      poster={`${url}#t=0.1`}
     >
       <source
         src={url}

@@ -27,13 +27,13 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <section className=" max-w-2xl mx-auto">
+      <section className="max-w-2xl mx-auto">
         <div className="container mx-auto flex items-start justify-between text-primary mt-6">
           <Link
             href="/"
             className="text-primary flex flex-row items-center gap-2"
           >
-            Index
+            /
           </Link>
           <div className="flex gap-4">
             <a
@@ -57,13 +57,13 @@ export default function Home() {
       </section>
 
       {/* Hero */}
-      <section className=" max-w-2xl mx-auto">
+      <section className="max-w-2xl mx-auto">
         <div className="container mx-auto flex flex-col justify-center pt-[180px] pb-[240px]">
           <h1 className="mb-6">
             Hey, I'm Luka, a product-oriented design engineer.
           </h1>
 
-          <p className="mb-6 max-w-[590px]">
+          <p className="mb-6 text-neutral-700">
             Most recently, I've spent three years as the founding designer at{" "}
             <a
               href="https://weweb.io"
@@ -73,8 +73,8 @@ export default function Home() {
             >
               weweb
             </a>{" "}
-            , a powerful web app builder. Previously worked for clients
-            including world-renowned bank and{" "}
+            , a web app builder. Previously worked for clients including
+            world-renowned bank and{" "}
             <a
               href="https://akkio.com"
               target="_blank"
@@ -109,7 +109,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className=" max-w-2xl mx-auto">
+      <section className="max-w-2xl mx-auto">
         {/* Company Section */}
         <div className="container flex flex-row items-center justify-between pb-[24px]">
           <div className="rounded-md flex flex-row items-center justify-center gap-2">
@@ -139,21 +139,21 @@ export default function Home() {
           </div>
           <span className="text-neutral-400 text-sm">2022 - 2025</span>
         </div>
-
-        <div>
-          <Carousel images={images} />
-        </div>
-
-        <div className="mt-[80px]">
-          <div className="rounded-md overflow-hidden">
-            <VideoComponentWithControls fileName="ww-ai2-f03z4HoaX5elLRvO6heEcBLVF0I2TQ.mov" />
-          </div>
-          AI chat
-        </div>
       </section>
 
+      <div className="max-w-2xl mx-auto">
+        <Carousel images={images} />
+      </div>
+
+      <div className="mt-[80px] max-w-2xl mx-auto ">
+        <div className="rounded-md overflow-hidden">
+          <VideoComponentWithControls fileName="ww-ai2-EwGIQ2sKS2Vgr1GZ5SVMvZ941DmrY9.mp4" />
+        </div>
+        AI chat
+      </div>
+
       {/* Playground Section */}
-      <section className="pb-[200px] max-w-[1440px] mx-auto grid grid-cols-3 gap-4 mt-[200px]">
+      <section className=" mx-auto grid grid-cols-3 gap-4 mt-[200px] pb-[200px] px-8">
         <h1 className="col-span-3 text-center mb-8">Playground</h1>
 
         <div className="flex flex-col gap-4">

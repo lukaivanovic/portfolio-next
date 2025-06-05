@@ -1,99 +1,59 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { PlayIcon, type PlayIconHandle } from "./PlayIcon";
+import { useRef } from "react";
+import { motion } from "motion/react";
 
-interface VideoPlayerWithControlsProps {
+interface VideoPlayerProps {
   url: string;
 }
 
-export default function VideoPlayerWithControls({
-  url,
-}: VideoPlayerWithControlsProps) {
+export default function VideoPlayer({ url }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const playIconRef = useRef<PlayIconHandle>(null);
-
-  function handleHover() {
-    if (playIconRef.current) {
-      playIconRef.current.startAnimation();
-    }
-  }
-
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play().catch((error) => {
-        if (error.name !== "AbortError") {
-          console.error("Error playing video:", error);
-        }
-      });
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
-
-    video.addEventListener("play", handlePlay);
-    video.addEventListener("pause", handlePause);
-
-    return () => {
-      video.removeEventListener("play", handlePlay);
-      video.removeEventListener("pause", handlePause);
-    };
-  }, []);
 
   return (
-    <div className="relative group rounded-lg overflow-hidden">
+    <div className="relative">
       <video
         ref={videoRef}
-        loop
-        muted
         playsInline
+        muted
+        loop
         preload="metadata"
+        autoPlay={false}
         aria-label="Video player"
+        className="rounded-lg overflow-hidden border border-neutral-200"
+        poster={`${url}#t=0.1`}
       >
         <source
           src={url}
           type={url.endsWith(".mov") ? "video/quicktime" : "video/mp4"}
         />
         <source src={url} type="video/webm; codecs=vp8,vorbis" />
-        <source src={url} type="video/quicktime" />
         Your browser does not support the video tag.
       </video>
-
-      {/* Overlay that shows when video is paused */}
-      {!isPlaying && (
-        <div
-          onMouseEnter={handleHover}
-          onClick={togglePlay}
-          className="absolute inset-0 bg-black/40 transition-opacity duration-200"
-        />
-      )}
-
       <button
-        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[64px] h-[64px] rounded-full bg-black/80 text-white flex items-center justify-center hover:bg-black/90 transition-opacity duration-200 ${
-          isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-100"
-        }`}
-        aria-label={isPlaying ? "Pause video" : "Play video"}
+        onClick={() => {
+          if (videoRef.current?.paused) {
+            videoRef.current?.play();
+          } else {
+            videoRef.current?.pause();
+          }
+        }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
+        aria-label="Play/Pause video"
       >
-        {isPlaying ? (
-          "Pause"
-        ) : (
-          <div>
-            <PlayIcon size={20} ref={playIconRef} />
-            Play
-          </div>
-        )}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polygon points="5 3 19 12 5 21 5 3" />
+        </svg>
       </button>
     </div>
   );
