@@ -149,7 +149,6 @@ export default function Home() {
         <div className="rounded-md overflow-hidden">
           <VideoComponentWithControls fileName="ww-ai2-EwGIQ2sKS2Vgr1GZ5SVMvZ941DmrY9.mp4" />
         </div>
-        AI chat
       </div>
 
       {/* Playground Section */}
@@ -162,10 +161,10 @@ export default function Home() {
         </div>
         <div className="flex flex-col gap-4">
           <VideoComponent fileName="audio-ios-gswdQVvr0ybJjdc8wAHXVaEFCJI496.mp4" />
-          <VideoComponent fileName="threejs-akqYsQvzXfgT2ojk1E1duSUnSU88vj.mp4" />
+          <VideoComponent fileName="threejs-qoC9exl6FPLBE8qtlFUgwAra8KQD71.mp4" />
         </div>
         <div className="flex flex-col gap-4">
-          <VideoComponent fileName="tsushima-0wnWLPGPxsUiKhzdE89BZRrC5A59YL.mp4" />
+          <VideoComponent fileName="tsushima2-zTxcfNY8oFT1s2d88kvcq3pjyGFJOa.mp4" />
           <VideoComponent fileName="menu-jEIIKGiyXywx0w281iZHE4ywEzyyif.mp4" />
         </div>
       </section>
@@ -190,5 +189,5 @@ async function VideoComponentWithControls({ fileName }: { fileName: string }) {
   });
   const { url } = blobs[0];
 
-  return <VideoPlayerWithControls url={url} />;
+  return <VideoPlayerWithControls url={url} aspectRatio="16/10" />;
 }

@@ -1,78 +1,100 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface VideoPlayerProps {
   url: string;
+  aspectRatio?: "video" | "square" | "portrait";
 }
 
-export default function VideoPlayer({ url }: VideoPlayerProps) {
+export default function VideoPlayer({
+  url,
+  aspectRatio = "video",
+}: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const container = containerRef.current;
+    if (!container) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Ensure video is loaded before playing
+          setIsInView(entry.isIntersecting);
+
+          if (entry.isIntersecting && videoRef.current) {
+            const video = videoRef.current;
             if (video.readyState >= 2) {
               video.play().catch((error) => {
-                if (error.name !== "AbortError") {
-                  console.error("Error playing video:", error);
-                }
+                console.error("Error playing video:", error);
               });
             } else {
-              // If video isn't loaded yet, wait for it
               video.addEventListener(
                 "canplay",
                 () => {
                   video.play().catch((error) => {
-                    if (error.name !== "AbortError") {
-                      console.error("Error playing video:", error);
-                    }
+                    console.error("Error playing video:", error);
                   });
                 },
                 { once: true }
               );
             }
-          } else {
-            video.pause();
           }
         });
       },
       {
-        threshold: 0.5,
+        threshold: 0.1,
+        rootMargin: "50px",
       }
     );
 
-    observer.observe(video);
+    observer.observe(container);
 
     return () => {
       observer.disconnect();
     };
   }, []);
 
+  const aspectRatioClass = {
+    video: "aspect-video",
+    square: "aspect-square",
+    portrait: "aspect-[9/16]",
+  }[aspectRatio];
+
   return (
-    <video
-      ref={videoRef}
-      playsInline
-      autoPlay
-      muted
-      loop
-      preload="metadata"
-      aria-label="Video player"
-      className="rounded-lg overflow-hidden border border-neutral-200"
-      poster={`${url}#t=0.1`}
+    <div
+      ref={containerRef}
+      className={`rounded-lg overflow-hidden border border-neutral-200 relative ${aspectRatioClass}`}
     >
-      <source
-        src={url}
-        type={url.endsWith(".mov") ? "video/quicktime" : "video/mp4"}
-      />
-      <source src={url} type="video/webm; codecs=vp8,vorbis" />
-      Your browser does not support the video tag.
-    </video>
+      {isInView ? (
+        <video
+          ref={videoRef}
+          playsInline
+          autoPlay
+          muted
+          loop
+          className="w-full h-full object-cover"
+          poster={`${url}#t=0.1`}
+        >
+          <source
+            src={url}
+            type={url.endsWith(".mov") ? "video/quicktime" : "video/mp4"}
+          />
+          <source src={url} type="video/webm; codecs=vp8,vorbis" />
+          Your browser does not support the video tag.
+        </video>
+      ) : (
+        <div
+          className="w-full h-full bg-neutral-100"
+          style={{
+            backgroundImage: `url(${url}#t=0.1)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      )}
+    </div>
   );
 }
