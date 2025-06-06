@@ -41,7 +41,11 @@ export default function VideoPlayer({
   }, []);
 
   return (
-    <div ref={containerRef} className="relative">
+    <div
+      ref={containerRef}
+      className={`rounded-lg overflow-hidden border border-neutral-200 relative`}
+      style={{ aspectRatio: aspectRatio }}
+    >
       {isInView ? (
         <video
           ref={videoRef}
@@ -49,7 +53,7 @@ export default function VideoPlayer({
           loop
           autoPlay={false}
           aria-label="Video player"
-          className={`rounded-lg overflow-hidden border border-neutral-200 ${aspectRatio} w-full h-full`}
+          className={`w-full h-full`}
           poster={`${url}#t=0.1`}
           onLoadedData={() => {
             console.log("Video loaded successfully");
@@ -71,7 +75,7 @@ export default function VideoPlayer({
         </video>
       ) : (
         <div
-          className={`rounded-lg overflow-hidden border border-neutral-200 ${aspectRatio} bg-neutral-100 w-full`}
+          className={`w-full h-full`}
           style={{
             backgroundImage: `url(${url}#t=0.1)`,
             backgroundSize: "cover",

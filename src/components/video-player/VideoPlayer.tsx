@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 interface VideoPlayerProps {
   url: string;
-  aspectRatio?: "video" | "square" | "portrait";
+  aspectRatio: string;
 }
 
 export default function VideoPlayer({
@@ -57,16 +57,11 @@ export default function VideoPlayer({
     };
   }, []);
 
-  const aspectRatioClass = {
-    video: "aspect-video",
-    square: "aspect-square",
-    portrait: "aspect-[9/16]",
-  }[aspectRatio];
-
   return (
     <div
       ref={containerRef}
-      className={`rounded-lg overflow-hidden border border-neutral-200 relative ${aspectRatioClass}`}
+      className={`rounded-lg overflow-hidden border border-neutral-200 relative w-full`}
+      style={{ aspectRatio: aspectRatio }}
     >
       {isInView ? (
         <video
@@ -87,7 +82,7 @@ export default function VideoPlayer({
         </video>
       ) : (
         <div
-          className="w-full h-full bg-neutral-100"
+          className="w-full h-full absolute inset-0 bg-neutral-100"
           style={{
             backgroundImage: `url(${url}#t=0.1)`,
             backgroundSize: "cover",

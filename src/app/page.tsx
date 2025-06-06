@@ -147,7 +147,7 @@ export default function Home() {
 
       <div className="mt-[80px] max-w-2xl mx-auto ">
         <div className="rounded-md overflow-hidden">
-          <VideoComponentWithControls fileName="ww-ai2-EwGIQ2sKS2Vgr1GZ5SVMvZ941DmrY9.mp4" />
+          <VideoComponentWithControls fileName="video/ww-ai.mp4" />
         </div>
       </div>
 
@@ -156,38 +156,32 @@ export default function Home() {
         <h1 className="col-span-3 text-center mb-8">Playground</h1>
 
         <div className="flex flex-col gap-4">
-          <VideoComponent fileName="rive-85tMyJUmJSpjRMkb92XjKmM4DmpBSx.mp4" />
-          <VideoComponent fileName="Radial-vMSxqhpEkaOUWTvw49xTu6pATe3ung.mp4" />
+          <VideoComponent fileName="video/rive.mp4" aspectRatio="16/9" />
+          <VideoComponent fileName="video/radial.mp4" aspectRatio="5/4" />
         </div>
         <div className="flex flex-col gap-4">
-          <VideoComponent fileName="audio-ios-gswdQVvr0ybJjdc8wAHXVaEFCJI496.mp4" />
-          <VideoComponent fileName="threejs-qoC9exl6FPLBE8qtlFUgwAra8KQD71.mp4" />
+          <VideoComponent fileName="video/ios-voice.mp4" aspectRatio="16/9" />
+          <VideoComponent fileName="video/threejs.mp4" aspectRatio="16/9" />
         </div>
         <div className="flex flex-col gap-4">
-          <VideoComponent fileName="tsushima2-zTxcfNY8oFT1s2d88kvcq3pjyGFJOa.mp4" />
-          <VideoComponent fileName="menu-jEIIKGiyXywx0w281iZHE4ywEzyyif.mp4" />
+          <VideoComponent fileName="video/tsushima.mp4" aspectRatio="1/1" />
+          <VideoComponent fileName="video/menu.mp4" aspectRatio="5/4" />
         </div>
       </section>
     </div>
   );
 }
 
-async function VideoComponent({ fileName }: { fileName: string }) {
-  const { blobs } = await list({
-    prefix: fileName,
-    limit: 1,
-  });
-  const { url } = blobs[0];
-
-  return <VideoPlayer url={url} />;
+async function VideoComponent({
+  fileName,
+  aspectRatio,
+}: {
+  fileName: string;
+  aspectRatio: string;
+}) {
+  return <VideoPlayer url={fileName} aspectRatio={aspectRatio} />;
 }
 
 async function VideoComponentWithControls({ fileName }: { fileName: string }) {
-  const { blobs } = await list({
-    prefix: fileName,
-    limit: 1,
-  });
-  const { url } = blobs[0];
-
-  return <VideoPlayerWithControls url={url} aspectRatio="16/10" />;
+  return <VideoPlayerWithControls url={fileName} aspectRatio="16/10" />;
 }
