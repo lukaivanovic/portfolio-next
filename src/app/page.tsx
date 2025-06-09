@@ -13,10 +13,10 @@ const images = [
     src: "weweb/workflows.png",
     alt: "Build your logic and automation with the workflow editor",
   },
-  {
-    src: "weweb/icons.png",
-    alt: "Browse and use the most popular icon libraries",
-  },
+  // {
+  //   src: "weweb/icons.png",
+  //   alt: "Browse and use the most popular icon libraries",
+  // },
   {
     src: "weweb/edition-panel.png",
     alt: "Create states, components or edit your elements visually",
@@ -26,45 +26,16 @@ const images = [
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
-      <section className="max-w-2xl mx-auto">
-        <div className="container mx-auto flex items-start justify-between text-primary mt-6">
-          <Link
-            href="/"
-            className="text-primary flex flex-row items-center gap-2"
-          >
-            /
-          </Link>
-          <div className="flex gap-4">
-            <a
-              className="hover:text-primary transition-colors"
-              href="https://www.linkedin.com/in/ivanovicluka0/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-            <a
-              className="hover:text-primary transition-colors"
-              href="https://x.com/lukaivnvc"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              X
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Hero */}
-      <section className="max-w-2xl mx-auto">
-        <div className="container mx-auto flex flex-col justify-center pt-[180px] pb-[240px]">
+      <section className="max-w-lg mx-auto">
+        <div className="container mx-auto flex flex-col justify-center items-center pt-[180px] pb-[240px] text-center">
           <h1 className="mb-6">
-            Hey, I'm Luka, a product-oriented design engineer.
+            Luka is a design engineer who wants to craft functional and
+            beautiful experiences.
           </h1>
 
           <p className="mb-6 text-neutral-700">
-            Most recently, I've spent three years as the founding designer at{" "}
+            Previously founding designer at{" "}
             <a
               href="https://weweb.io"
               target="_blank"
@@ -73,8 +44,8 @@ export default function Home() {
             >
               weweb
             </a>{" "}
-            , a web app builder. Previously worked for clients including
-            world-renowned bank and{" "}
+            , a web app builder and working with clients including
+            world-renowned bank and startups like{" "}
             <a
               href="https://akkio.com"
               target="_blank"
@@ -83,11 +54,7 @@ export default function Home() {
             >
               Akkio
             </a>
-            .
-            <br />
-            <br />
-            I'm currently working on improving my craft and learning new things.
-            Open to inquiries.
+            . Currently working on improving my craft and learning new things.
           </p>
 
           <div className="flex gap-2">
@@ -109,7 +76,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-2xl mx-auto">
+      <section className="max-w-4xl mx-auto">
         {/* Company Section */}
         <div className="container flex flex-row items-center justify-between pb-[24px]">
           <div className="rounded-md flex flex-row items-center justify-center gap-2">
@@ -141,33 +108,32 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <Carousel images={images} />
       </div>
 
-      <div className="mt-[80px] max-w-2xl mx-auto ">
+      <div className="mt-[80px] max-w-4xl mx-auto pb-[240px] flex flex-col gap-[80px]">
+        {/* <div>
+          <img
+            className="rounded-md overflow-hidden mb-2"
+            src="/weweb/main.png"
+            alt="Weweb"
+          />
+          <p>{images[0].alt}</p>
+        </div>
+
         <div className="rounded-md overflow-hidden">
-          <VideoComponentWithControls fileName="video/ww-ai.mp4" />
+          <img src="/weweb/workflows.png" alt="Weweb" />
+        </div>
+
+        <div className="rounded-md overflow-hidden">
+          <img src="/weweb/edition-panel.png" alt="Weweb" />
+        </div> */}
+
+        <div className="rounded-md overflow-hidden">
+          <VideoComponent fileName="ww-ai" aspectRatio="16/9" />
         </div>
       </div>
-
-      {/* Playground Section */}
-      <section className=" mx-auto grid grid-cols-3 gap-4 mt-[200px] pb-[200px] px-8">
-        <h1 className="col-span-3 text-center mb-8">Playground</h1>
-
-        <div className="flex flex-col gap-4">
-          <VideoComponent fileName="video/rive.mp4" aspectRatio="16/9" />
-          <VideoComponent fileName="video/radial.mp4" aspectRatio="5/4" />
-        </div>
-        <div className="flex flex-col gap-4">
-          <VideoComponent fileName="video/ios-voice.mp4" aspectRatio="16/9" />
-          <VideoComponent fileName="video/threejs.mp4" aspectRatio="16/9" />
-        </div>
-        <div className="flex flex-col gap-4">
-          <VideoComponent fileName="video/tsushima.mp4" aspectRatio="1/1" />
-          <VideoComponent fileName="video/menu.mp4" aspectRatio="5/4" />
-        </div>
-      </section>
     </div>
   );
 }

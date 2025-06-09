@@ -14,6 +14,7 @@ export default function VideoPlayer({
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
+  const [isVideoReady, setIsVideoReady] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -57,12 +58,24 @@ export default function VideoPlayer({
     };
   }, []);
 
+  const handleVideoLoad = () => {
+    setIsVideoReady(true);
+  };
+
   return (
     <div
       ref={containerRef}
       className={`rounded-lg overflow-hidden border border-neutral-200 relative w-full`}
       style={{ aspectRatio: aspectRatio }}
     >
+      <img
+        src={`/thumbnails/${url}.png`}
+        alt="Video thumbnail"
+        className={`w-full h-full absolute inset-0 object-cover transition-opacity duration-500 ${
+          isVideoReady ? "opacity-0" : "opacity-100"
+        }`}
+      />
+
       {isInView ? (
         <video
           ref={videoRef}
@@ -70,26 +83,19 @@ export default function VideoPlayer({
           autoPlay
           muted
           loop
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover transition-opacity duration-500 ${
+            isVideoReady ? "opacity-100" : "opacity-0"
+          }`}
           poster={`${url}#t=0.1`}
+          onLoadedData={handleVideoLoad}
         >
           <source
-            src={url}
-            type={url.endsWith(".mov") ? "video/quicktime" : "video/mp4"}
+            src={`https://d23jdrz1gfvvje.cloudfront.net/${url}.mp4`}
+            type={"video/mp4"}
           />
-          <source src={url} type="video/webm; codecs=vp8,vorbis" />
           Your browser does not support the video tag.
         </video>
-      ) : (
-        <div
-          className="w-full h-full absolute inset-0 bg-neutral-100"
-          style={{
-            backgroundImage: `url(${url}#t=0.1)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-      )}
+      ) : null}
     </div>
   );
 }

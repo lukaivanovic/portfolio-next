@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import FloatingMenu from "@/components/FloatingMenu";
+import Navigation from "@/components/Navigation";
 
 import "./globals.css";
 
@@ -16,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body>{children}</body>
+      <body>
+        <Navigation />
+        {children}
+        <FloatingMenu />
+      </body>
     </html>
   );
 }

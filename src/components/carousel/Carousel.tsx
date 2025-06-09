@@ -30,12 +30,12 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
 
   return (
     <div>
-      <div className="relative main-image-container overflow-hidden rounded-lg mb-2 aspect-[8/5] flex items-center justify-center">
+      <div className="relative main-image-container overflow-hidden rounded-2xl mb-2 aspect-[8/5] flex items-center justify-center border border-neutral-200">
         <AnimatePresence initial={false}>
           <motion.img
             key={images[activeIndex].src}
             src={images[activeIndex].src}
-            className="absolute max-w-full object-cover h-full"
+            className="absolute max-w-full object-cover w-full h-full "
             style={{ transform: "none" }}
             initial={{ x: 400, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
