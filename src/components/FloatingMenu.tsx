@@ -36,6 +36,14 @@ export default function FloatingMenu() {
       >
         Twitter
       </Link>
+      <Link
+        href="mailto:lluka.ivanovic@gmail.com"
+        className="px-4 py-1 rounded-full transition-colors text-neutral-300 hover:text-white"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Contact
+      </Link>
     </div>
   );
 }
