@@ -28,6 +28,14 @@ export default function FloatingMenu() {
       >
         Craft
       </Link>
+      <Link
+        href="https://x.com/lukaivnvc"
+        className="px-4 py-1 rounded-full transition-colors text-neutral-300 hover:text-white"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Twitter
+      </Link>
     </div>
   );
 }
