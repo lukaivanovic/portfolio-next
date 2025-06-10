@@ -1,0 +1,60 @@
+.overlay {
+  inset: -2px;
+  border: 1px dashed;
+  border-radius: 10px;
+  border-color: rgb(147, 51, 234); /* purple-600 */
+}
+
+.overlay::after {
+  content: "OVERLAY";
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-size: 9px;
+  font-family: monospace;
+  padding: 2px 2px;
+  border-radius: 4px;
+  pointer-events: none;
+  background-color: var(--color-purple-200); /* purple-400 */
+  color: var(--color-purple-600); /* purple-800 */
+}
+
+.content {
+  inset: -2px;
+  border: 1px dashed;
+  border-color: rgb(251, 146, 60); /* orange-400 */
+}
+
+.content::after {
+  content: "CONTENT";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 9px;
+  font-family: monospace;
+  padding: 2px 2px;
+  border-radius: 4px;
+  pointer-events: none;
+  background-color: var(--color-orange-200); /* orange-400 */
+  color: var(--color-orange-600); /* orange-800 */
+}
+
+.trigger {
+  inset: -2px;
+  border: 1px dashed;
+  border-color: rgb(34, 211, 238); /* cyan-400 */
+}
+
+.trigger::after {
+  content: "TRIGGER";
+  position: absolute;
+  top: calc(50% - 9px);
+  left: calc(100% + 4px);
+  font-size: 9px;
+  font-family: monospace;
+  padding: 2px 2px;
+  border-radius: 4px;
+  pointer-events: none;
+  background-color: var(--color-cyan-200); /* cyan-400 */
+  color: var(--color-cyan-600); /* cyan-800 */
+}

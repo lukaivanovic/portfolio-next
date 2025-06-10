@@ -3,6 +3,7 @@ import Carousel from "@/components/carousel/Carousel";
 import { list } from "@vercel/blob";
 import VideoPlayer from "@/components/video-player/VideoPlayer";
 import VideoPlayerWithControls from "@/components/video-player/VideoPlayerWithControls";
+import { DialogPreview } from "@/components/ww-dialog/DialogPreview";
 
 const images = [
   {
@@ -27,7 +28,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="max-w-lg mx-auto">
+      <section className="max-w-2xl mx-auto">
         <div className="container mx-auto flex flex-col justify-center items-center pt-[180px] pb-[240px] text-center">
           <h1 className="mb-6">
             Luka is a design engineer who wants to craft functional and
@@ -112,7 +113,7 @@ export default function Home() {
         <Carousel images={images} />
       </div>
 
-      <div className="mt-[80px] max-w-4xl mx-auto pb-[240px] flex flex-col gap-[80px]">
+      <section className="mt-[80px] max-w-4xl mx-auto pb-[240px] flex flex-col gap-[80px]">
         {/* <div>
           <img
             className="rounded-md overflow-hidden mb-2"
@@ -131,9 +132,19 @@ export default function Home() {
         </div> */}
 
         <div className="rounded-md overflow-hidden">
-          <VideoComponent fileName="ww-ai" aspectRatio="16/9" />
+          <VideoComponent fileName="ww-ai" aspectRatio="16/10" />
         </div>
-      </div>
+
+        <div className="rounded-md overflow-hidden">
+          <DialogPreview />
+        </div>
+      </section>
+
+      <section className="max-w-4xl mx-auto text-center pb-[120px]">
+        Luka Ivanovic
+        <br />
+        Design Engineer
+      </section>
     </div>
   );
 }
