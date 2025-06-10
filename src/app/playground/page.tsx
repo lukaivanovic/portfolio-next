@@ -3,7 +3,7 @@ import VideoPlayer from "@/components/video-player/VideoPlayer";
 export default function Playground() {
   return (
     <div className="min-h-screen max-w-4xl px-3 mx-auto">
-      <section className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-2 mt-[64px] pb-[240px] px-8">
+      <section className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-2 mt-[64px] pb-[240px]">
         <h1 className="col-span-1 lg:col-span-2 text-center mb-[80px]">
           Playground
         </h1>

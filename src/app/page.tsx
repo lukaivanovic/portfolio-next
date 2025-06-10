@@ -29,7 +29,7 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="max-w-2xl px-4 mx-auto">
-        <div className="container mx-auto flex flex-col justify-start items-center text-center mt-[64px] pb-[240px]">
+        <div className="container mx-auto flex flex-col justify-center items-center text-center pt-[160px] pb-[200px]">
           <h1 className="mb-4">
             A design engineer with the goal of building functional and beautiful
             experiences.
