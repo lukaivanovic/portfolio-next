@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="max-w-2xl mx-auto">
+      <section className="max-w-2xl px-4 mx-auto">
         <div className="container mx-auto flex flex-col justify-start items-center text-center mt-[64px] pb-[240px]">
           <h1 className="mb-4">
             A design engineer with the goal of building functional and beautiful
@@ -76,7 +76,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto">
+      <section className="max-w-4xl px-4 mx-auto">
         <div className="container flex flex-row items-center justify-between pb-[24px]">
           <div className="rounded-md flex flex-row items-center justify-center gap-2">
             <svg
@@ -134,7 +134,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto pb-[240px]">
+      <section className="max-w-4xl px-4 mx-auto pb-[240px]">
         <div className="container flex flex-row items-center justify-between pb-6">
           <div className="rounded-md flex flex-row items-center justify-center gap-2">
             <img
