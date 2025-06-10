@@ -29,14 +29,14 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="max-w-2xl mx-auto">
-        <div className="container mx-auto flex flex-col justify-center items-center pt-[180px] pb-[240px] text-center">
-          <h1 className="mb-6">
-            Luka is a design engineer who wants to craft functional and
-            beautiful experiences.
+        <div className="container mx-auto flex flex-col justify-start items-center text-center mt-[64px] pb-[240px]">
+          <h1 className="mb-4">
+            A design engineer with the goal of building functional and beautiful
+            experiences.
           </h1>
 
-          <p className="mb-6 text-neutral-700">
-            Previously founding designer at{" "}
+          <span className="px-8 font-mono text-xs uppercase text-secondary">
+            Previously at{" "}
             <a
               href="https://weweb.io"
               target="_blank"
@@ -45,20 +45,19 @@ export default function Home() {
             >
               weweb
             </a>{" "}
-            , a web app builder and working with clients including
-            world-renowned bank and startups like{" "}
+            ,{" "}
             <a
               href="https://akkio.com"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors"
             >
-              Akkio
-            </a>
-            . Currently working on improving my craft and learning new things.
-          </p>
+              akkio
+            </a>{" "}
+            and a world-renowned bank.
+          </span>
 
-          <div className="flex gap-2">
+          {/* <div className="flex gap-2">
             <a
               href="https://calendly.com/lluka-ivanovic/new-meeting"
               target="_blank"
@@ -73,7 +72,7 @@ export default function Home() {
             >
               Copy email
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -107,11 +106,32 @@ export default function Home() {
           </div>
           <span className="text-neutral-400 text-sm">2022 - 2025</span>
         </div>
-      </section>
 
-      <div className="max-w-4xl mx-auto">
-        <Carousel images={images} />
-      </div>
+        <div className="mt-[80px] pb-[240px] flex flex-col gap-[80px]">
+          <div className="max-w-4xl mx-auto">
+            <Carousel images={images} />
+          </div>
+
+          <div>
+            <div className="rounded-md overflow-hidden">
+              <VideoComponent fileName="ww-ai" aspectRatio="16/10" />
+            </div>
+
+            <div className="mt-4 font-mono text-xs uppercase text-secondary text-center">
+              AI chatbot that helps you build web applications
+            </div>
+          </div>
+
+          <div>
+            <div className="rounded-md overflow-hidden">
+              <DialogPreview />
+            </div>
+            <div className="mt-4 font-mono text-xs uppercase text-secondary text-center">
+              dialog, one of 50+ components available in the toolkit
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="mt-[80px] max-w-4xl mx-auto pb-[240px] flex flex-col gap-[80px]">
         {/* <div>
@@ -130,21 +150,13 @@ export default function Home() {
         <div className="rounded-md overflow-hidden">
           <img src="/weweb/edition-panel.png" alt="Weweb" />
         </div> */}
-
-        <div className="rounded-md overflow-hidden">
-          <VideoComponent fileName="ww-ai" aspectRatio="16/10" />
-        </div>
-
-        <div className="rounded-md overflow-hidden">
-          <DialogPreview />
-        </div>
       </section>
 
-      <section className="max-w-4xl mx-auto text-center pb-[120px]">
+      {/* <section className="max-w-4xl mx-auto text-center pb-[120px]">
         Luka Ivanovic
         <br />
         Design Engineer
-      </section>
+      </section> */}
     </div>
   );
 }

@@ -71,7 +71,7 @@ export default function VideoPlayer({
       <img
         src={`/thumbnails/${url}.png`}
         alt="Video thumbnail"
-        className={`w-full h-full absolute inset-0 object-cover transition-opacity duration-500 ${
+        className={`w-[120%] h-[120%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inset-0 object-cover transition-opacity duration-500 ${
           isVideoReady ? "opacity-0" : "opacity-100"
         }`}
       />
@@ -86,7 +86,7 @@ export default function VideoPlayer({
           className={`w-full h-full object-cover transition-opacity duration-500 ${
             isVideoReady ? "opacity-100" : "opacity-0"
           }`}
-          poster={`${url}#t=0.1`}
+          poster={`/thumbnails/${url}.png`}
           onLoadedData={handleVideoLoad}
         >
           <source

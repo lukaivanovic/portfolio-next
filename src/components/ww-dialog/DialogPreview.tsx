@@ -124,14 +124,14 @@ export function DialogPreview() {
 
   return (
     <div
-      className="flex flex-col bg-white rounded-md overflow-hidden mb-12 text-neutral-900 aspect-[16/9]"
+      className="flex flex-col bg-neutral-100 rounded-md  text-neutral-900 aspect-[16/10] overflow-hidden"
       ref={previewRef}
     >
       <div className="relative shadow-2xl flex-grow">
         <div className="absolute left-3 top-3 z-40">
           <button
             onClick={toggleSettings}
-            className="pulse w-8 h-8 bg-neutral-100 rounded-full flex items-center justify-center hover:bg-neutral-200 transition-colors text-neutral-600"
+            className="w-8 h-8 bg-neutral-100 rounded-full flex items-center justify-center hover:bg-neutral-200 transition-colors text-neutral-600 cursor-pointer z-50"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -156,10 +156,10 @@ export function DialogPreview() {
         </div>
 
         <div
-          className="relative flex flex-col flex-grow h-full"
+          className="relative flex flex-col flex-grow h-full scale-90"
           onClick={() => setSettingsOpened(false)}
         >
-          <div className="flex-grow flex items-center justify-center overflow-hidden scale-80">
+          <div className="flex-grow flex items-center justify-center">
             <Dialog
               isOpen={isOpen}
               onClose={() => setIsOpen(false)}

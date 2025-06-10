@@ -253,7 +253,7 @@ export function Dialog({
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={handleOverlayClick}
-                style={{ position: "fixed", inset: 0, zIndex: 50 }}
+                style={{ position: "absolute", inset: 0 }}
               >
                 {overlay}
               </motion.div>
@@ -266,7 +266,6 @@ export function Dialog({
               style={
                 {
                   ...contentStyle,
-                  zIndex: 60,
                 } as React.CSSProperties
               }
               variants={animationVariants}

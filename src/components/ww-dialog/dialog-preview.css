@@ -1,6 +1,6 @@
 .overlay {
   inset: -2px;
-  border: 1px dashed;
+  border: 2px dashed;
   border-radius: 10px;
   border-color: rgb(147, 51, 234); /* purple-600 */
 }
@@ -21,7 +21,7 @@
 
 .content {
   inset: -2px;
-  border: 1px dashed;
+  border: 2px dashed;
   border-color: rgb(251, 146, 60); /* orange-400 */
 }
 
@@ -41,7 +41,7 @@
 
 .trigger {
   inset: -2px;
-  border: 1px dashed;
+  border: 2px dashed;
   border-color: rgb(34, 211, 238); /* cyan-400 */
 }
 

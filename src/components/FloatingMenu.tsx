@@ -7,7 +7,7 @@ export default function FloatingMenu() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-neutral-900/80 backdrop-blur-sm rounded-full px-2 py-2 flex gap-2">
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-neutral-900/80 backdrop-blur-sm rounded-full px-1 py-1 flex gap-2">
       <Link
         href="/"
         className={`px-4 py-1 rounded-full transition-colors ${
