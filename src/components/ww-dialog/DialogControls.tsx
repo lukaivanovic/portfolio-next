@@ -261,41 +261,6 @@ export function DialogControls({
       </div>
 
       <div className="p-2 border-t border-neutral-800">
-        <div className="flex rounded overflow-hidden bg-neutral-800 p-0.5 gap-0.5 mt-2">
-          <button
-            onClick={() => updateModel("animation", "fade")}
-            className={`flex-1 py-1 text-xs rounded-md transition-colors ${
-              model.animation === "fade"
-                ? "bg-neutral-700 text-neutral-100"
-                : "text-neutral-400 hover:bg-neutral-800"
-            }`}
-          >
-            Fade
-          </button>
-          <button
-            onClick={() => updateModel("animation", "zoom")}
-            className={`flex-1 py-1 text-xs rounded-md transition-colors ${
-              model.animation === "zoom"
-                ? "bg-neutral-700 text-neutral-100"
-                : "text-neutral-400 hover:bg-neutral-800"
-            }`}
-          >
-            Zoom
-          </button>
-          <button
-            onClick={() => updateModel("animation", "slide-in-bottom")}
-            className={`flex-1 py-1 text-xs rounded-md transition-colors ${
-              model.animation === "slide-in-bottom"
-                ? "bg-neutral-700 text-neutral-100"
-                : "text-neutral-400 hover:bg-neutral-800"
-            }`}
-          >
-            Slide in
-          </button>
-        </div>
-      </div>
-
-      <div className="p-2 border-t border-neutral-800">
         {/* Buttons */}
         <div className="flex gap-2">
           <button
@@ -303,13 +268,6 @@ export function DialogControls({
             className="flex-1 px-3 h-6 rounded text-center bg-neutral-800 hover:bg-neutral-700 transition-colors text-neutral-100"
           >
             Overlay
-          </button>
-
-          <button
-            onClick={() => updateModel("trigger", !model.trigger)}
-            className="flex-1 px-3 h-6 rounded text-center bg-neutral-800 hover:bg-neutral-700 transition-colors text-neutral-100"
-          >
-            Trigger
           </button>
         </div>
       </div>

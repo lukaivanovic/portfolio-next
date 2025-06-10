@@ -77,7 +77,6 @@ export default function Home() {
       </section>
 
       <section className="max-w-4xl mx-auto">
-        {/* Company Section */}
         <div className="container flex flex-row items-center justify-between pb-[24px]">
           <div className="rounded-md flex flex-row items-center justify-center gap-2">
             <svg
@@ -90,25 +89,27 @@ export default function Home() {
             >
               <path fill="currentColor" d="M0 0h16v16H0z" />
               <path
-                fill="var(--color-neutral-300)"
+                fill="white"
                 d="M9.746 9.473H6.291a.117.117 0 0 0-.12.115v2.294c0 .063.054.115.12.115h5.707L9.746 9.473Z"
               />
               <path
-                fill="var(--color-neutral-300)"
+                fill="white"
                 d="M9.746 6.585v2.89l2.252 2.524V6.585a.117.117 0 0 0-.12-.115H9.867a.117.117 0 0 0-.12.115ZM6.25 9.414v-2.89L3.998 4v5.414c0 .064.054.115.12.115H6.13a.117.117 0 0 0 .119-.115Z"
               />
               <path
-                fill="var(--color-neutral-300)"
+                fill="white"
                 d="M6.211 6.632h3.4c.083 0 .15-.054.15-.12V4.12c0-.066-.067-.12-.15-.12H4.003l2.21 2.632Z"
               />
             </svg>
             weweb
           </div>
-          <span className="text-neutral-400 text-sm">2022 - 2025</span>
+          <span className="text-secondary text-xs font-mono uppercase">
+            Founding Designer · 2022 - 2025
+          </span>
         </div>
 
-        <div className="mt-[80px] pb-[240px] flex flex-col gap-[80px]">
-          <div className="max-w-4xl mx-auto">
+        <div className=" pb-[240px] flex flex-col gap-[120px]">
+          <div>
             <Carousel images={images} />
           </div>
 
@@ -133,30 +134,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-[80px] max-w-4xl mx-auto pb-[240px] flex flex-col gap-[80px]">
-        {/* <div>
+      <section className="max-w-4xl mx-auto pb-[240px]">
+        <div className="container flex flex-row items-center justify-between pb-6">
+          <div className="rounded-md flex flex-row items-center justify-center gap-2">
+            <img
+              src="/akk-logo.png"
+              alt="Akkio"
+              className="w-6 h-6 rounded-sm overflow-hidden"
+            />
+            Akkio
+          </div>
+          <span className="text-neutral-400 text-sm">Product Designer</span>
+        </div>
+
+        <div className="rounded-xl overflow-hidden aspect-[16/9]">
           <img
-            className="rounded-md overflow-hidden mb-2"
-            src="/weweb/main.png"
+            src="/akk.png"
             alt="Weweb"
+            className="w-full h-full object-cover"
           />
-          <p>{images[0].alt}</p>
         </div>
-
-        <div className="rounded-md overflow-hidden">
-          <img src="/weweb/workflows.png" alt="Weweb" />
-        </div>
-
-        <div className="rounded-md overflow-hidden">
-          <img src="/weweb/edition-panel.png" alt="Weweb" />
-        </div> */}
       </section>
-
-      {/* <section className="max-w-4xl mx-auto text-center pb-[120px]">
-        Luka Ivanovic
-        <br />
-        Design Engineer
-      </section> */}
     </div>
   );
 }

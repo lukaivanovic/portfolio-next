@@ -131,7 +131,7 @@ export function DialogPreview() {
         <div className="absolute left-3 top-3 z-40">
           <button
             onClick={toggleSettings}
-            className="w-8 h-8 bg-neutral-100 rounded-full flex items-center justify-center hover:bg-neutral-200 transition-colors text-neutral-600 cursor-pointer z-50"
+            className="w-8 h-8 bg-neutral-900 rounded-full flex items-center justify-center hover:bg-neutral-800 transition-colors text-neutral-100 cursor-pointer z-50"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
