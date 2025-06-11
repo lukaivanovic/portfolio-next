@@ -89,10 +89,7 @@ export default function VideoPlayer({
           poster={`/thumbnails/${url}.png`}
           onLoadedData={handleVideoLoad}
         >
-          <source
-            src={`https://d23jdrz1gfvvje.cloudfront.net/${url}.mp4`}
-            type={"video/mp4"}
-          />
+          <source src={`cdn.ivanovicluka.co/${url}.mp4`} type={"video/mp4"} />
           Your browser does not support the video tag.
         </video>
       ) : null}
