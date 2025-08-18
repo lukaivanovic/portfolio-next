@@ -46,7 +46,14 @@ export default function Home() {
           <VideoComponent fileName="buena-website-dark" aspectRatio="16/9" />
         </div>
         <div className="grid lg:grid-cols-[120px_1fr] gap-1 mt-6">
-          <p>Buena</p>
+          <a
+            href="https://buena.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors underline underline-offset-4 decoration-dotted decoration-text-secondary hover:text-primary"
+          >
+            buena.com
+          </a>
           <p className="text-secondary">
             Property management firm that raised $58M Series A from Google
             Ventures. Main product is a web application for property managers.
@@ -110,7 +117,14 @@ export default function Home() {
           </div> */}
         </div>
         <div className="grid lg:grid-cols-[120px_1fr] gap-1 mt-6">
-          <p>WeWeb</p>
+          <a
+            href="https://weweb.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary transition-colors underline underline-offset-4 decoration-dotted decoration-text-secondary hover:text-primary"
+          >
+            weweb.io
+          </a>
           <p className="text-secondary">
             WeWeb is a platform for building web applications where I joined as
             the first design hire and transitioned towards design engineering in
@@ -124,7 +138,7 @@ export default function Home() {
         <div className="w-full aspect-[16/9] flex justify-center items-center [&>*:first-child]:w-auto [&>*:first-child]:h-full bg-black rounded-lg">
           <VideoComponent fileName="workout-app" aspectRatio="1/1" />
         </div>
-        <div className="grid lg:grid-cols-[120px_1fr] gap-1 mt-6">
+        <div className="grid lg:grid-cols-[120px_1fr_120px] gap-1 mt-6">
           <p>Gymmy</p>
           <p className="text-secondary">
             Gymmy is a hobby iOS application for tracking your workouts using
