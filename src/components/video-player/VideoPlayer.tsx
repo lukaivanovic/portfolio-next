@@ -1,15 +1,18 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface VideoPlayerProps {
   url: string;
   aspectRatio: string;
+  className?: string;
 }
 
 export default function VideoPlayer({
   url,
   aspectRatio = "video",
+  className,
 }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -65,7 +68,7 @@ export default function VideoPlayer({
   return (
     <div
       ref={containerRef}
-      className={`rounded-lg overflow-hidden border border-neutral-200 relative w-full`}
+      className={cn(`overflow-hidden relative w-full rounded-lg`, className)}
       style={{ aspectRatio: aspectRatio }}
     >
       <img
@@ -92,6 +95,10 @@ export default function VideoPlayer({
           <source
             src={`https://cdn.ivanovicluka.co/${url}.mp4`}
             type={"video/mp4"}
+          />
+          <source
+            src={`https://cdn.ivanovicluka.co/${url}.webm`}
+            type={"video/webm"}
           />
           Your browser does not support the video tag.
         </video>
