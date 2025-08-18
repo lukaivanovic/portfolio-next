@@ -5,6 +5,7 @@ import FloatingMenu from "@/components/FloatingMenu";
 import Navigation from "@/components/Navigation";
 import NavigationWithActiveState from "@/components/NavigationWithActiveState";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Image from "next/image";
 import Script from "next/script";
 
@@ -133,13 +134,14 @@ export default function RootLayout({
               </p>
             </div>
           </div>
-          <Analytics />
         </div>
         <div className="py-8">
           {/* <Navigation /> */}
           {children}
           {/* <FloatingMenu /> */}
         </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
