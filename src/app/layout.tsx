@@ -19,6 +19,26 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  openGraph: {
+    title: "Luka Ivanovic",
+    description: "Luka Ivanovic's personal website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Luka Ivanovic",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Luka Ivanovic",
+    description: "Luka Ivanovic's personal website",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
