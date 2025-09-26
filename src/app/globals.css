@@ -29,6 +29,10 @@
   font-display: swap;
 }
 
+html {
+  overscroll-behavior: none;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -36,6 +40,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
 }
 
 h1 {
@@ -73,5 +78,9 @@ p {
 }
 
 @utility border-link {
-  @apply border border-neutral-300 rounded-full px-2 py-1 flex flex-row items-center gap-2 h-8 text-neutral-600 hover:text-neutral-900;
+  @apply border border-neutral-300 rounded-full px-2 py-1 flex flex-row items-center justify-center gap-2 h-8 text-neutral-600 hover:bg-neutral-100;
+}
+
+@utility button-link {
+  @apply border border-transparent bg-black hover:bg-neutral-800 rounded-full px-2 py-1 flex flex-row items-center justify-center gap-2 h-8 text-white;
 }

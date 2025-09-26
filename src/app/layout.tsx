@@ -118,7 +118,7 @@ export default function RootLayout({
                   href="mailto:hi@ivanovicluka.co"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className=" border-link"
+                  className="button-link flex-1"
                 >
                   Send email
                 </Link>{" "}
@@ -126,7 +126,7 @@ export default function RootLayout({
                   href="https://x.com/lukaivnvc"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className=" border-link"
+                  className="border-link flex-1"
                 >
                   <XLogo className="w-3 h-3 text-neutral-600 hover:text-neutral-900" />
                 </Link>
@@ -134,7 +134,9 @@ export default function RootLayout({
             </div>
           </div>
         </div>
-        <div className="py-4 px-8 pr-8 bg-neutral-100">{children}</div>
+        <div className="py-4 px-8 pr-8 bg-neutral-100">
+          <div className="max-w-[1100px] mx-auto">{children}</div>
+        </div>
         <Analytics />
         <SpeedInsights />
       </body>

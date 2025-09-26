@@ -39,7 +39,7 @@ const images = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen space-y-20 lg:space-y-40 pb-[240px]">
+    <div className="min-h-screen space-y-20 lg:space-y-20 pb-[240px]">
       <section>
         <div>
           {/* <TestStreamingVideo /> */}
@@ -142,7 +142,7 @@ export default function Home() {
           <p>Gymmy</p>
           <p className="text-secondary">
             Hobby application for tracking your workouts using your voice as
-            input. Currently unreleased.
+            input.
           </p>
         </div>
       </section>
