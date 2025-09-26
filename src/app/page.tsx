@@ -116,7 +116,13 @@ export default function Home() {
             </div>
           </div> */}
         </div>
-        <div className="grid lg:grid-cols-[120px_1fr] gap-1 mt-6">
+        <div className="flex flex-col gap-1 mt-6">
+          <p className="text-secondary">
+            WeWeb is a platform for building web applications where I joined as
+            the first design hire and transitioned towards design engineering in
+            my 3 year tenure. I was part of most core projects and learnt a lot
+            about startups and myself.
+          </p>
           <a
             href="https://weweb.io"
             target="_blank"
@@ -125,12 +131,6 @@ export default function Home() {
           >
             weweb.io
           </a>
-          <p className="text-secondary">
-            WeWeb is a platform for building web applications where I joined as
-            the first design hire and transitioned towards design engineering in
-            my 3 year tenure. I was part of most core projects and learnt a lot
-            about startups and myself.
-          </p>
         </div>
       </section>
 
@@ -138,11 +138,11 @@ export default function Home() {
         <div className="w-full aspect-[16/9] flex justify-center items-center [&>*:first-child]:w-auto [&>*:first-child]:h-full bg-black rounded-lg">
           <VideoComponent fileName="workout-app" aspectRatio="1/1" />
         </div>
-        <div className="grid lg:grid-cols-[120px_1fr_120px] gap-1 mt-6">
+        <div className="flex flex-col gap-1 mt-6">
           <p>Gymmy</p>
           <p className="text-secondary">
-            Gymmy is a hobby iOS application for tracking your workouts using
-            your voice as input. Currently unreleased.
+            Hobby application for tracking your workouts using your voice as
+            input. Currently unreleased.
           </p>
         </div>
       </section>

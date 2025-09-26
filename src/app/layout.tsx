@@ -34,8 +34,8 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body className="px-4 lg:px-8 max-w-[1512px] mx-auto grid  grid-cols-1 lg:grid-cols-[288px_1fr] gap-x-6">
-        <div>
+      <body className=" mx-auto grid  grid-cols-1 lg:grid-cols-[288px_1fr] gap-x-6 ">
+        <div className="bg-white pl-8">
           <div className="sticky top-0 flex flex-col lg:min-h-screen gap-4 py-8">
             <div className="flex flex-col justify-between flex-1 gap-2">
               {/* <div className="flex items-center gap-4 pb-12">
@@ -134,7 +134,7 @@ export default function RootLayout({
             </div>
           </div>
         </div>
-        <div className="py-2">{children}</div>
+        <div className="py-4 px-8 pr-8 bg-neutral-100">{children}</div>
         <Analytics />
         <SpeedInsights />
       </body>
