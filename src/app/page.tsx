@@ -45,15 +45,7 @@ export default function Home() {
           {/* <TestStreamingVideo /> */}
           <VideoComponent fileName="buena-website-dark" aspectRatio="16/9" />
         </div>
-        <div className="grid lg:grid-cols-[120px_1fr] gap-1 mt-6">
-          <a
-            href="https://buena.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors underline underline-offset-4 decoration-dotted decoration-text-secondary hover:text-primary"
-          >
-            buena.com
-          </a>
+        <div className="flex flex-col gap-1 mt-6">
           <p className="text-secondary">
             Property management firm that raised $58M Series A from Google
             Ventures. Main product is a web application for property managers.
@@ -61,6 +53,14 @@ export default function Home() {
             was responsible for the development of the website which was done in
             a 5-day sprint.
           </p>
+          <a
+            href="https://buena.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-link"
+          >
+            buena.com
+          </a>
         </div>
       </section>
 
@@ -121,7 +121,7 @@ export default function Home() {
             href="https://weweb.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-secondary transition-colors underline underline-offset-4 decoration-dotted decoration-text-secondary hover:text-primary"
+            className="text-secondary underline-link"
           >
             weweb.io
           </a>

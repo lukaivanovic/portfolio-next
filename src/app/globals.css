@@ -32,7 +32,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-size: 14px;
+  font-size: 13px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -66,4 +66,12 @@ p {
 
 .text-secondary {
   color: var(--color-secondary);
+}
+
+@utility underline-link {
+  @apply underline underline-offset-2 decoration-neutral-300 hover:text-primary;
+}
+
+@utility border-link {
+  @apply border border-neutral-300 rounded-full px-2 py-1 flex flex-row items-center gap-2 h-8 text-neutral-600 hover:text-neutral-900;
 }

@@ -11,6 +11,7 @@ import Script from "next/script";
 
 import "./globals.css";
 import Link from "next/link";
+import XLogo from "@/assets/XLogo";
 
 export const metadata: Metadata = {
   title: "Luka Ivanovic",
@@ -33,10 +34,10 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body className="px-4 lg:px-8 max-w-[1480px] mx-auto grid  grid-cols-1 lg:grid-cols-[260px_1fr] gap-x-20">
+      <body className="px-4 lg:px-8 max-w-[1512px] mx-auto grid  grid-cols-1 lg:grid-cols-[288px_1fr] gap-x-6">
         <div>
           <div className="sticky top-0 flex flex-col lg:min-h-screen gap-4 py-8">
-            <div>
+            <div className="flex flex-col justify-between flex-1 gap-2">
               {/* <div className="flex items-center gap-4 pb-12">
                 <Link href="/">
                   <Image
@@ -47,99 +48,93 @@ export default function RootLayout({
                     className="h-8 w-auto"
                   />
                 </Link>
-
-               
               </div> */}
 
               <div className="flex flex-col gap-2">
-                <Link
-                  href="/"
-                  className="text-neutral-600 hover:text-neutral-900"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/playground"
-                  className="text-neutral-600 hover:text-neutral-900"
-                >
-                  Playground
-                </Link>
-                <Link
-                  href="https://x.com/lukaivnvc"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-neutral-600 hover:text-neutral-900"
-                >
-                  Twitter
-                </Link>
+                {/* <div className="flex flex-row gap-2">
+                  <Link
+                    href="/"
+                    className="text-neutral-600 hover:text-neutral-900"
+                  >
+                    Projects
+                  </Link>
+                  <Link
+                    href="/playground"
+                    className="text-neutral-600 hover:text-neutral-900"
+                  >
+                    Playground
+                  </Link>
+                </div> */}
+
+                <Navigation />
+
+                <h1 className=" mt-8">
+                  Design engineer looking to contribute to society through
+                  software.
+                </h1>
+                <p className="text-secondary mb-4">
+                  Previously worked with{" "}
+                  <a
+                    href="https://buena.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline-link"
+                  >
+                    Buena
+                  </a>
+                  ,{" "}
+                  <a
+                    href="https://weweb.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline-link"
+                  >
+                    WeWeb
+                  </a>
+                  ,{" "}
+                  <a
+                    href="https://weweb.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline-link"
+                  >
+                    Daytona
+                  </a>
+                  ,{" "}
+                  <a
+                    href="https://akkio.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline-link"
+                  >
+                    Akkio
+                  </a>
+                  .
+                </p>
+              </div>
+
+              <div className="flex flex-row gap-2">
                 <Link
                   href="mailto:hi@ivanovicluka.co"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-neutral-600 hover:text-neutral-900"
+                  className=" border-link"
                 >
-                  Contact
+                  Send email
+                </Link>{" "}
+                <Link
+                  href="https://x.com/lukaivnvc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=" border-link"
+                >
+                  <XLogo className="w-3 h-3 text-neutral-600 hover:text-neutral-900" />
                 </Link>
               </div>
-
-              <h1 className="mb-4 mt-8">
-                Design engineer looking to contribute to society through
-                software.
-              </h1>
-              <p className="text-secondary mb-4">
-                Currently working with{" "}
-                <a
-                  href="https://buena.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors underline underline-offset-4 decoration-dotted decoration-text-secondary hover:text-primary"
-                >
-                  Buena
-                </a>{" "}
-                on transforming the property management industry.
-              </p>
-              <p className="text-secondary mb-4">
-                Previously worked with{" "}
-                <a
-                  href="https://weweb.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors underline underline-offset-4 decoration-dotted decoration-text-secondary hover:text-primary"
-                >
-                  WeWeb
-                </a>
-                ,{" "}
-                <a
-                  href="https://weweb.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors underline underline-offset-4 decoration-dotted decoration-text-secondary hover:text-primary"
-                >
-                  Daytona
-                </a>
-                ,{" "}
-                <a
-                  href="https://akkio.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors underline underline-offset-4 decoration-dotted decoration-text-secondary hover:text-primary"
-                >
-                  Akkio
-                </a>
-                .
-              </p>
-              <p className="text-secondary">
-                In my free time I like to experiment with shaders, 3D,
-                interactions, animations.
-              </p>
             </div>
           </div>
         </div>
-        <div className="py-8">
-          {/* <Navigation /> */}
-          {children}
-          {/* <FloatingMenu /> */}
-        </div>
+        <div className="py-2">{children}</div>
         <Analytics />
         <SpeedInsights />
       </body>

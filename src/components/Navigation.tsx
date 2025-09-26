@@ -2,37 +2,59 @@
 
 import Link from "next/link";
 import Logo from "@/assets/Logo";
+import { usePathname } from "next/navigation";
 
 export default function Navigation() {
+  const pathname = usePathname();
+
   return (
-    <section className="max-w-2xl mx-auto">
-      <div className="container mx-auto flex items-center justify-center text-primary mt-6">
-        {/* <Logo /> */}
-        <Link
-          href="/"
-          className="text-secondary flex flex-row items-center gap-2 uppercase font-mono text-xs"
+    <div className="flex flex-row  items-center justify-between gap-1">
+      <Link
+        href="/"
+        className={`hover:text-neutral-900 flex flex-row items-center gap-1 ${
+          pathname === "/"
+            ? "text-neutral-300"
+            : "text-neutral-600 hover:text-neutral-900"
+        }`}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 32 32"
         >
-          Luka Ivanovic
-        </Link>
-        {/* <div className="flex gap-4">
-          <a
-            className="hover:text-primary transition-colors"
-            href="https://www.linkedin.com/in/ivanovicluka0/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-          <a
-            className="hover:text-primary transition-colors"
-            href="https://x.com/lukaivnvc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            X
-          </a>
-        </div> */}
-      </div>
-    </section>
+          <path
+            fill="currentColor"
+            d="m20 24l-10-8l10-8z"
+            strokeWidth="1"
+            stroke="currentColor"
+          />
+        </svg>
+        Projects
+      </Link>
+      <Link
+        href="/playground"
+        className={`flex flex-row items-center gap-1 ${
+          pathname === "/playground"
+            ? "text-neutral-300"
+            : "text-neutral-600 hover:text-neutral-900"
+        }`}
+      >
+        Playground
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 32 32"
+        >
+          <path
+            fill="currentColor"
+            d="m12 8l10 8l-10 8z"
+            strokeWidth="1"
+            stroke="currentColor"
+          />
+        </svg>
+      </Link>
+    </div>
   );
 }
