@@ -54,8 +54,8 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body className=" mx-auto grid  grid-cols-1 lg:grid-cols-[288px_1fr] gap-x-6 ">
-        <div className="bg-white pl-8">
+      <body className="mx-auto grid  grid-cols-1 lg:grid-cols-[288px_1fr] gap-x-6 ">
+        <div className="bg-white pl-8 pr-4 lg:pr-[0]">
           <div className="sticky top-0 flex flex-col lg:min-h-screen gap-4 py-8">
             <div className="flex flex-col justify-between flex-1 gap-2">
               {/* <div className="flex items-center gap-4 pb-12">
@@ -71,26 +71,11 @@ export default function RootLayout({
               </div> */}
 
               <div className="flex flex-col gap-2">
-                {/* <div className="flex flex-row gap-2">
-                  <Link
-                    href="/"
-                    className="text-neutral-600 hover:text-neutral-900"
-                  >
-                    Projects
-                  </Link>
-                  <Link
-                    href="/playground"
-                    className="text-neutral-600 hover:text-neutral-900"
-                  >
-                    Playground
-                  </Link>
-                </div> */}
-
                 <Navigation />
 
                 <h1 className=" mt-8">
-                  Design engineer looking to contribute to society through
-                  software.
+                  Function-first design engineer focused on solving real
+                  problems and shipping fast
                 </h1>
                 <p className="text-secondary mb-4">
                   Previously worked with{" "}
@@ -133,7 +118,7 @@ export default function RootLayout({
                 </p>
               </div>
 
-              <div className="flex flex-row gap-2">
+              <div className="flex flex-col gap-1">
                 <Link
                   href="mailto:hi@ivanovicluka.co"
                   target="_blank"
@@ -154,7 +139,7 @@ export default function RootLayout({
             </div>
           </div>
         </div>
-        <div className="py-4 px-8 pr-8 bg-neutral-100">
+        <div className="py-4 px-8 bg-neutral-100">
           <div className="max-w-[1100px] mx-auto">{children}</div>
         </div>
         <Analytics />

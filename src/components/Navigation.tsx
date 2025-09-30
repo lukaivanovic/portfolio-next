@@ -13,7 +13,7 @@ export default function Navigation() {
         href="/"
         className={`hover:text-neutral-900 flex flex-row items-center gap-1 ${
           pathname === "/"
-            ? "text-neutral-300"
+            ? "text-neutral-400"
             : "text-neutral-600 hover:text-neutral-900"
         }`}
       >
@@ -36,7 +36,7 @@ export default function Navigation() {
         href="/playground"
         className={`flex flex-row items-center gap-1 ${
           pathname === "/playground"
-            ? "text-neutral-300"
+            ? "text-neutral-400"
             : "text-neutral-600 hover:text-neutral-900"
         }`}
       >

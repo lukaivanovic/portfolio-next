@@ -93,10 +93,6 @@ export default function VideoPlayer({
           onLoadedData={handleVideoLoad}
         >
           <source
-            src={`https://cdn.ivanovicluka.co/${url}.mp4`}
-            type={"video/mp4"}
-          />
-          <source
             src={`https://cdn.ivanovicluka.co/${url}.webm`}
             type={"video/webm"}
           />
